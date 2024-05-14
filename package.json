@@ -5,7 +5,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "format": "prettier --write *.js **/*.js"
+    "format": "prettier --write *.js **/*.js",
+    "dev": "nodemon src/app.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -14,6 +15,7 @@
     "mongoose": "^8.3.4"
   },
   "devDependencies": {
+    "nodemon": "^3.1.0",
     "prettier": "^3.2.5"
   }
 }

@@ -2,16 +2,12 @@ import express from 'express';
 import connect from './schemas/index.js';
 import dotenv from 'dotenv'
 import errorHandlerMiddleware from './middlewares/error-handler.middleware.js';
-// import productsRouter from './routes/products.router.js';
+import productsRouter from './routes/products.router.js';
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
-
-console.log('PORT:', PORT); // 환경 변수 로드 확인을 위한 로그
-console.log('MONGODB_URL:', process.env.MONGODB_URL);
-console.log('MONGODB_NAME:', process.env.MONGODB_NAME);
 
 connect();
 
@@ -23,14 +19,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get('/', (req, res) => {
-  // return res.json({ message: 'Hi!' });
-// });
+router.get('/', (req, res) => {
+  return res.json({ message: '서버 동작중...' });
+});
 
-// app.use('/api/v1', [router, productsRouter]);
-// app.use(errorHandlerMiddleware);
+app.use('/api/v1', [router, productsRouter]);
+app.use(errorHandlerMiddleware);
 
 app.listen(PORT, () => {
   console.log(PORT, 'marketPlace BE OPEN!');
