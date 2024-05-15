@@ -29,15 +29,20 @@ yarn run dev
 ```
 .
 ├── node_modules
+├── MDS
+│   ├── app.md
+│   ├── error-handler.middleware.md
+│   ├── product.router.md
+│   └── product.schema.md
 ├── src
 │   ├── middlewarmies
-│   │   └── error-handler.middleware.js
+│   │   └── error-handler.middleware.js 미들웨어
 │   ├── routers
-│   │   └── products.router.js
+│   │   └── products.router.js 라우터
 │   ├──  schemas
-│   │    ├── index.js
-│   │    └── product.schema.js
-│   └── app.js
+│   │    ├── index.js 디비 연결 정보
+│   │    └── product.schema.js 스키마
+│   └── app.js 
 ├── .env
 ├── .gitignore
 ├── .prettierrc
@@ -49,13 +54,16 @@ yarn run dev
 - `app.js`
     - **전체 어플리케이션의 시작점**입니다.
     - **미들웨어(Middleware)**와 **라우터(Router)**를 등록하며, 서버를 시작하는 역할을 담당합니다.
+    [app.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/app.md)
 - **middlewares**
     - 미들웨어를 정의하기 위해 사용합니다.
     - 에러 핸들러, 로깅, 사용자 인증과 같은 미들웨어를 이 폴더에서 관리합니다.
+    [error-handler.middleware.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/error-handler.middleware.md)
 - **routes**
     - Express.js의 **라우터(Router)**를 관리하기 위해 사용합니다.
     - 각 **API 경로를 정의**하며, 해당 경로에서 실행될 **함수를 관리**하는 역할을 담당합니다.
+    [products.router.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/product.router.md)
 - **schemas**
     - MongoDB를 사용하기 위한 `mongoose`의 **스키마(Schema)** 및 **모델(Model)**을 정의하기 위해 사용합니다.
     - MongoDB **데이터의 구조**와 **데이터를 처리할 메서드**를 정의하는 역할을 담당합니다.
-
+    [product.schema.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/product.schema.md)

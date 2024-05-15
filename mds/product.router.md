@@ -1,3 +1,5 @@
+### product.router.js
+---
 ```javascript
 import express from 'express';
 import Product from '../schemas/product.schema.js';

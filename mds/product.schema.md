@@ -1,3 +1,5 @@
+### product.schema.js
+---
 ```javascript
 import mongoose from 'mongoose';
 
