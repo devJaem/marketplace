@@ -51,6 +51,7 @@ const deleteProductSchema = joi.object({
   }),
 });
 
+/* 상품 생성 API */
 router.post('/products', async (req, res, next) => {
   try {
     const validation = await createProductSchema.validateAsync(req.body);
