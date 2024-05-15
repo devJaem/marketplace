@@ -8,9 +8,9 @@ const ProductSchema = new mongoose.Schema({
   order: {
     type: Number,
     required: true,
-    unique: true
+    unique: true,
   },
-  description:{
+  description: {
     type: String,
     required: true,
   },
@@ -42,16 +42,16 @@ ProductSchema.set('toJSON', {
     delete ret._id;
     delete ret.__v;
     return ret;
-  }
+  },
 });
 
 ProductSchema.set('toObject', {
   transform: (doc, ret) => {
     ret.id = ret._id.toString(); // _id를 id로 변환
-    delete ret._id;              // _id 필드 제거
-    delete ret.__v;              // __v 필드 제거
+    delete ret._id; // _id 필드 제거
+    delete ret.__v; // __v 필드 제거
     return ret;
-  }
+  },
 });
 
 export default mongoose.model('Product', ProductSchema);

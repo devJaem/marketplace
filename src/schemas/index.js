@@ -5,12 +5,9 @@ dotenv.config();
 
 const connect = () => {
   mongoose
-    .connect(
-      process.env.MONGODB_URL,
-      {
-        dbName: process.env.MONGODB_NAME
-      },
-    )
+    .connect(process.env.MONGODB_URL, {
+      dbName: process.env.MONGODB_NAME,
+    })
     .then(() => console.log('MongoDB 연결에 성공하였습니다.'))
     .catch((err) => console.log(`MongoDB 연결에 실패하였습니다. ${err}`));
 };

@@ -1,6 +1,6 @@
 import express from 'express';
 import connect from './schemas/index.js';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 import errorHandlerMiddleware from './middlewares/error-handler.middleware.js';
 import productsRouter from './routes/products.router.js';
 
