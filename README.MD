@@ -42,7 +42,9 @@ yarn run dev
 │   │   └── products.router.js 라우터
 │   ├──  schemas
 │   │    ├── index.js 디비 연결 정보
-│   │    └── product.schema.js 스키마
+│   │    ├── product.schema.js 스키마
+│   │    ├── product.service.js DB데이터 무결성 유지
+│   │    └── product.validation.js 입력값의 유효성 검증 (joi)
 │   └── app.js 
 ├── .env
 ├── .gitignore
@@ -67,17 +69,9 @@ yarn run dev
 - `schemas`
     - MongoDB를 사용하기 위한 `mongoose`의 **스키마(Schema)** 및 **모델(Model)**을 정의하기 위해 사용합니다.
     - MongoDB **데이터의 구조**와 **데이터를 처리할 메서드**를 정의하는 역할을 담당합니다.
+    - MongoDB 사용자가 api호출시 입력한 데이터의 유효성을 검증합니다. (joi)
+    - MongoDB 데이터의 무결성을 유지하기위한 역할을 담당합니다 (비밀번호 체크, 중복확인)
     [product.schema.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/product.schema.md)
+    [product.service.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/product.service.md)
+    [product.validation.js 설명](https://github.com/devJaem/marketplace/blob/main/mds/product.vaildation.md)
 
-### 함께 제출할 문제
----
-1. **API 명세서**를 작성해야 되는 이유는 무엇인가요?
-2. 패키지 설치 시 **package.json** 파일의 **dependencies**에 추가되는 것과 **devDependencies**에 추가되는 것의 차이점은 무엇인가요? 
-3. MongoDB의 **Schema**는 무엇인가요? 그리고 **Model**은 또 무엇인가요?
-4. 대표적인 **Http Method**는 무엇이며, 각각은 언제 사용하나요?
-5. 수정할 때 사용할 수 있는 **HTTP Method**는 **PUT**과 **PATCH**가 있는데, 어떤 차이점이 있나요?
-6. 대표적인 **Http Status Code**는 무엇이며, 각각은 언제 사용하나요?
-7. API 호출 시 **데이터를 넘기는 방식 3가지**는 무엇이며, 각각은 언제 사용하나요?
-8. API 설계 시 **RESTful**하게 설계한다는 것은 무엇인가요?
-9. **비밀번호 저장 시 평문으로 저장**하면 DB 유출 시 문제가 됩니다. 어떻게 저장해야 안전하게 저장할 수 있을까요?
-10. **미들웨어**를 사용하는 이유와 에러 처리 이 외에 어떤 용도로 사용할 수 있을까요?
