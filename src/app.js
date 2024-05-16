@@ -21,8 +21,10 @@ app.use((req, res, next) => {
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  return res.json({ message: '서버 동작중...' });
+app.get('/', (req, res) => {
+  return res.status(200).json({ 
+    status: 200,
+    message: '서버 동작중 ...' });
 });
 
 app.use('/api/v1', [router, productsRouter]);
