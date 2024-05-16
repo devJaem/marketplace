@@ -3,8 +3,14 @@ import Product from '../schemas/product.schema.js';
 import productValidation from '../schemas/product.validation.js';
 import productService from '../schemas/product.service.js';
 
-const { createProductSchema, updateProductSchema, deleteProductSchema } = productValidation;
-const { validateProductId, findProductById, verifyPassword, checkDuplicateProductName } = productService;
+const { createProductSchema, updateProductSchema, deleteProductSchema } =
+  productValidation;
+const {
+  validateProductId,
+  findProductById,
+  verifyPassword,
+  checkDuplicateProductName,
+} = productService;
 
 const router = express.Router();
 
@@ -116,12 +122,12 @@ router.patch('/products/:productId', async (req, res, next) => {
     }
 
     verifyPassword(product, password);
-    
+
     if (name) product.name = name;
     if (description) product.description = description;
     if (manager) product.manager = manager;
     if (status) product.status = status;
-    
+
     const updatedAt = new Date();
     product.updatedAt = updatedAt;
 

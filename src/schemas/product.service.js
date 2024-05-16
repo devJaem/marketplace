@@ -34,6 +34,11 @@ const checkDuplicateProductName = async (name) => {
     error.status = 409;
     throw error;
   }
-}
+};
 
-export default {validateProductId, findProductById, verifyPassword, checkDuplicateProductName};
+export default {
+  validateProductId,
+  findProductById,
+  verifyPassword,
+  checkDuplicateProductName,
+};
